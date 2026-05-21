@@ -1,6 +1,6 @@
 def A(x):
     return 40*x + 200
-d
+
 def B(x):
     return 70*x + 50
 
