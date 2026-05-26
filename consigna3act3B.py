@@ -52,3 +52,4 @@ mostrar_matriz(M)
 promedio_por_funcion(M)
 promedio_por_servidor(M)
 mostrar_transpuesta(M)
+
