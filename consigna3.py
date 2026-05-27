@@ -1,28 +1,37 @@
-m = [
+# Matriz de tiempos
+M = [
     [120, 150, 100],
     [200, 180, 220],
-    [90,  110,  95]
+    [90, 110, 95]
 ]
 
-print("Tiempo promedio de ejecución por funcion")
-for i in range(3):
-    suma_fila = 0
-    for j in range(3):
-        suma_fila = suma_fila + m[i][j]
-    promedio = suma_fila // 3
-    print("Funcion", i, promedio, "ms")
+print("Promedio por funcion:")
 
-print("Tiempo promedio de ejecución por servidor")
-for j in range(3):
-    suma_columna = 0
-    for i in range(3):
-        suma_columna = suma_columna + m[i][j]
-    promedio = suma_columna // 3
-    print("Servidor", j, promedio, "ms")
+for fila in range(3):
+    suma = 0
 
-print("Matriz Transpuesta M^T:")
-for j in range(3):
-    fila_transpuesta = [0, 0, 0]
-    for i in range(3):
-        fila_transpuesta[i] = m[i][j]
-    print(fila_transpuesta)
+    for columna in range(3):
+        suma = suma + M[fila][columna]
+
+    promedio = suma / 3
+
+    print("Funcion", fila + 1, ":", promedio)
+
+print("\nPromedio por servidor:")
+
+for columna in range(3):
+    suma = 0
+
+    for fila in range(3):
+        suma = suma + M[fila][columna]
+
+    promedio = suma / 3
+
+    print("Servidor", columna + 1, ":", promedio)
+
+print("Matriz transpuesta:")
+
+for columna in range(3):
+    for fila in range(3):
+        print(M[fila][columna], end=" ")
+    print() 
