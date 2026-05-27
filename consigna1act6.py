@@ -1,12 +1,20 @@
-A = {101, 102, 103, 104, 105, 106}
-B = {104, 105, 106, 107, 108}
-C = {102, 105, 109}
+a = [101, 102, 103, 104, 105, 106]
+b = [104, 105, 106, 107, 108]
+c = [102, 105, 109]
 
-universo = A | B | C
+todos = [101, 102, 103, 104, 105, 106, 107, 108, 109]
 
-for uid in universo:
-    p = uid in A
-    q = uid in B
-    r = uid in C
+for uid in todos:
+    print("Usuario:", uid)
+    
+    if uid in a:
+        print("- Está en el Grupo P")
+        
+    if uid in b:
+        print("- Está en el Grupo Q")
+        
+    if uid in c:
+        print("- Está en el Grupo R")
     es_critico = (p or q) and r
     print("Usuario:", uid, "-> Critico:", es_critico)
+        
