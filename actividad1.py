@@ -15,3 +15,5 @@ for uid in todos:
         
     if uid in c:
         print("- Esta en el Grupo R")
+        es_critico = (p or q) and r
+    print("Usuario:", uid, "-> Critico:", es_critico)
