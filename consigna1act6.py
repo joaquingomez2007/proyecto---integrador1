@@ -15,3 +15,19 @@ for uid in todos:
         
     if uid in c:
         print("- Esta en el Grupo R")
+
+print("\nUsuarios criticos:")
+
+for uid in todos:
+
+    es_critico = ((uid in a) or (uid in b)) and (uid in c)
+
+    if es_critico:
+        print(uid)
+
+print("\nUsuarios no criticos:")
+
+for uid in todos:
+    no_critico = ((uid in c)) and not ((uid in a) or (uid in b))
+    if no_critico:
+        print(uid)
