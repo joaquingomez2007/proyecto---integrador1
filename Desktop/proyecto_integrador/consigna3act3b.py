@@ -1,29 +1,28 @@
-def A(x):
-    return 40*x + 200
+m = [
+    [120, 150, 100],
+    [200, 180, 220],
+    [90,  110,  95]
+]
 
-def B(x):
-    return 70*x + 50
+print("Tiempo promedio de ejecución por funcion")
+for i in range(3):
+    suma_fila = 0
+    for j in range(3):
+        suma_fila = suma_fila + m[i][j]
+    promedio = suma_fila // 3
+    print("Funcion", i, promedio, "ms")
 
-def C(x):
-    return -2*x**2 + 80*x + 100
+print("Tiempo promedio de ejecución por servidor")
+for j in range(3):
+    suma_columna = 0
+    for i in range(3):
+        suma_columna = suma_columna + m[i][j]
+    promedio = suma_columna // 3
+    print("Servidor", j, promedio, "ms")
 
-valores = [0, 5, 10, 15, 20, 25, 30, 40, 50]
-
-for i in valores:
-
-    print("x =", i)
-
-    print("A =", A(i))
-    print("B =", B(i))
-    print("C =", C(i))
-
-    if A(i) <= B(i) and A(i) <= C(i):
-        print("Mas barato: Plan A")
-
-    elif B(i) <= A(i) and B(i) <= C(i):
-        print("Mas barato: Plan B")
-
-    else:
-        print("Mas barato: Plan C")
-
-    print()
+print("Matriz Transpuesta M^T:")
+for j in range(3):
+    fila_transpuesta = [0, 0, 0]
+    for i in range(3):
+        fila_transpuesta[i] = m[i][j]
+    print(fila_transpuesta)
