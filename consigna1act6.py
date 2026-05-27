@@ -1,7 +1,17 @@
-def evaluar_expresion(p, q, r):
-    return (p or q) and r
+a = [101, 102, 103, 104, 105, 106]
+b = [104, 105, 106, 107, 108]
+c = [102, 105, 109]
 
-print(evaluar_expresion(True, True, True))   
-print(evaluar_expresion(True, False, False))  
-print(evaluar_expresion(False, True, True))  
-print(evaluar_expresion(False, False, True))  
+todos = [101, 102, 103, 104, 105, 106, 107, 108, 109]
+
+for uid in todos:
+    print("Usuario:", uid)
+    
+    if uid in a:
+        print("- Esta en el Grupo P")
+        
+    if uid in b:
+        print("- Esta en el Grupo Q")
+        
+    if uid in c:
+        print("- Esta en el Grupo R")
