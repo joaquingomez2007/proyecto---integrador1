@@ -1,38 +1,28 @@
-def cargar_matriz():
-    matriz_local = []
-    for servidor in range(2):
-        fila_servidor = []
-        for funcion in range(3):
-            num = int(input("Ingrese un numero: "))
-            fila_servidor.append(num)
-        matriz_local.append(fila_servidor)
-    return matriz_local
+m = [
+    [120, 150, 100],
+    [200, 180, 220],
+    [90,  110,  95]
+]
 
-def mostrar_matriz(M):
-    print("Matriz:")
-    for fila in M:
-        print(fila)
+print("Tiempo promedio de ejecución por funcion")
+for i in range(3):
+    suma_fila = 0
+    for j in range(3):
+        suma_fila = suma_fila + m[i][j]
+    promedio = suma_fila // 3
+    print("Funcion", i, promedio, "ms")
 
-def promedio_por_funcion(M):
-    print("\nPromedio por funcion:")
+print("Tiempo promedio de ejecución por servidor")
+for j in range(3):
+    suma_columna = 0
+    for i in range(3):
+        suma_columna = suma_columna + m[i][j]
+    promedio = suma_columna // 3
+    print("Servidor", j, promedio, "ms")
 
-    for funcion in range(3):
-        suma = 0
-    
-        for servidor in range(2):
-            suma = suma + M[servidor][funcion]
-        
-        promedio = suma / 2
-        print(promedio)
-
-def promedio_por_servidor(M):
-    print("\nPromedio por servidor:")
-
-    for servidor in range(2):
-        suma = 0
-
-        for funcion in range(3):
-            suma = suma + M[servidor][funcion]
-            
-        promedio = suma / 3
-        print(promedio)
+print("Matriz Transpuesta M^T:")
+for j in range(3):
+    fila_transpuesta = [0, 0, 0]
+    for i in range(3):
+        fila_transpuesta[i] = m[i][j]
+    print(fila_transpuesta)
