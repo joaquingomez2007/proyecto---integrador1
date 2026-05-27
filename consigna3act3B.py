@@ -22,7 +22,7 @@ def promedio_por_funcion(M):
         for servidor in range(2):
             suma = suma + M[servidor][funcion]
         
-        promedio = suma / 2
+        promedio = suma / 2 
         print(promedio)
 
 def promedio_por_servidor(M):
